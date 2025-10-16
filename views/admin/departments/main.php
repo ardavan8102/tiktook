@@ -15,6 +15,8 @@
 
                     <h2>دپارتمان جدید</h2>
 
+                    <?php TT_Flash_Message::show_message(); ?>
+
                     <form method="post" id="tiktook-add-department">
 
                     <?php wp_nonce_field( 'add_department', 'add_department_nonce', false); ?>

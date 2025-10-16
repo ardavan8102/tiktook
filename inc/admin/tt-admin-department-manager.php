@@ -30,9 +30,20 @@ class TT_Admin_Department_Manager {
                 $insert = $this->insert_department($_POST);
 
                 if ($insert) {
+                    TT_Flash_Message::add_message(
+                        'دپارتمان با موفقیت ساخته شد',
+                        2
+                    );
+
+                    session_write_close();
+
                     wp_redirect( admin_url('admin.php?page=tt-depratment-list'));
                     exit;
                 }
+            }
+
+            if(isset($_POST['edit_department_nonce'])){
+
             }
             
         } else {

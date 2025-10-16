@@ -57,10 +57,12 @@ class TT_Core {
 
     public function init(){
 
+        require_once TT_PATH . 'inc/admin/tt-session-manager.php';
+        TT_Session_Manager::init();
+
+
         require_once TT_PATH . 'vendor/autoload.php';
-
         require_once TT_INC_PATH . 'admin/codestar/codestar-framework.php';
-
         require_once TT_INC_PATH . 'admin/settings/tt-settings.php';
 
         register_activation_hook( TT_BASE_FILE, [$this, 'active']);

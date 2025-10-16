@@ -10,6 +10,8 @@ Author URI: https://ardavaneskandari.ir
 
 defined('ABSPATH') || exit('No Access');
 
+require 'inc/public/tt-db.php';
+
 class TT_Core {
 
     // Singleton Method
@@ -44,6 +46,7 @@ class TT_Core {
         define('TT_URL' , trailingslashit(plugin_dir_url(TT_BASE_FILE)));
         define('TT_ADMIN_ASSETS', trailingslashit( TT_URL . 'assets/admin' ));
         define('TT_FRONT_ASSETS', trailingslashit( TT_URL . 'assets/frontend' ));
+        define('TT_INC_PATH', trailingslashit( TT_PATH . 'inc' ));
 
         $tt_plugin_data = get_plugin_data(TT_BASE_FILE);
 
@@ -55,6 +58,10 @@ class TT_Core {
 
         require_once TT_PATH . 'vendor/autoload.php';
 
+        require_once TT_INC_PATH . 'admin/codestar/codestar-framework.php';
+
+        require_once TT_INC_PATH . 'admin/settings/tt-settings.php';
+
         register_activation_hook( TT_BASE_FILE, [$this, 'active']);
         register_deactivation_hook( TT_BASE_FILE, [$this, 'deactive']);
 
@@ -63,7 +70,6 @@ class TT_Core {
 
         if (is_admin()) {
             new TT_Menu();
-            new TT_Tickets_Menu();
         }
 
     }

@@ -7,17 +7,24 @@ class TT_Menu extends Base_Menu{
     public function __construct()
     {
         $this->page_title = 'پشتیبانی تیک توک';
-        $this->menu_title = 'تنظیمات تیک توک';
+        $this->menu_title = 'تیک توک :)';
         $this->menu_slug = 'tiktook-plugin';
         $this->icon = TT_ADMIN_ASSETS . 'img/ticket.png';
         $this->has_sub_menu = true;
         $this->sub_items = [
 
             'settings' => [
-                'page_title' => 'تنظیمات اصلی',
-                'menu_title' => 'تنظیمات اصلی',
-                'menu_slug' => 'tt-general-settings',
-                'callback' => 'settings_page'
+                'page_title' => 'تنظیمات',
+                'menu_title' => 'تنظیمات',
+                'menu_slug' => 'tiktook-settings',
+                'callback' => ''
+            ],
+
+            'tickets' => [
+                'page_title' => 'لیست تیکت ها',
+                'menu_title' => 'لیست تیکت ها',
+                'menu_slug' => 'tt-tickets-list',
+                'callback' => 'tt_tickets_list_page'
             ],
 
             'departments' => [
@@ -38,7 +45,11 @@ class TT_Menu extends Base_Menu{
 
     }
 
-    public function settings_page(){
+    public function tt_tickets_list_page(){
+
+    }
+
+    public function depratments_list_page(){
 
     }
 

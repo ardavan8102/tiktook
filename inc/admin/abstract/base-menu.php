@@ -51,6 +51,11 @@ abstract class Base_Menu{
             }
 
         }
+
+        remove_submenu_page(
+            $this->menu_slug,
+            $this->menu_slug
+        );
     }
 
 

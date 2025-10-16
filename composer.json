@@ -1,0 +1,16 @@
+{
+    "name": "user/ticktook",
+    "authors": [
+        {
+            "name": "ardavan8102",
+            "email": "ardavaneskandari007@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "classmap": [
+            "inc/"
+        ]
+    }
+}

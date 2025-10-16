@@ -11,7 +11,19 @@ class TT_Assets{
 
 
     public function admin_assets(){
-        wp_enqueue_script('tt-app-js', TT_ADMIN_ASSETS . 'js/app.js', ['jquery'], TT_PLUGIN_VER, true);
+        // Scripts
+        wp_enqueue_script('tt-select2-js', TT_ADMIN_ASSETS . 'js/select2.min.js', ['jquery'], '', true);
+        wp_enqueue_script('tt-app', TT_ADMIN_ASSETS . 'js/app.js', ['jquery'], TT_PLUGIN_VER, true);
+
+        // Localize
+        wp_localize_script('tt-app', 'TT_DATA', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce'    => wp_create_nonce('tt_search_users'),
+        ]);
+
+        // Styles
+        wp_enqueue_style('tt-admin-style', TT_ADMIN_ASSETS . 'css/style.css', '', TT_PLUGIN_VER);
+        wp_enqueue_style('tt-select2-style', TT_ADMIN_ASSETS . 'css/select2.min.css', '', TT_PLUGIN_VER);
     }
 
 

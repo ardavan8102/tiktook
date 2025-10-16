@@ -50,6 +50,9 @@ class TT_Menu extends Base_Menu{
     }
 
     public function depratments_list_page(){
+        
+        $manager = new TT_Admin_Department_Manager();
+        $manager->page();
 
     }
 

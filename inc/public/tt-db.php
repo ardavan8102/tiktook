@@ -54,7 +54,7 @@ class TT_db {
             `priority` varchar(32) NOT NULL,
             `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `reply_date` varchar(19) DEFAULT NULL,
-            `voice` tinyint(512) DEFAULT NULL,
+            `voice` bigint(512) DEFAULT NULL,
             `file` text DEFAULT NULL,
             PRIMARY KEY (`ID`),
             KEY `title` (`title`),
@@ -72,7 +72,7 @@ class TT_db {
             `creator_id` bigint(20) DEFAULT NULL,
             `from_admin` tinyint(1) DEFAULT NULL,
             `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            `voice` tinyint(512) DEFAULT NULL,
+            `voice` bigint(512) DEFAULT NULL,
             `file` text DEFAULT NULL,
             PRIMARY KEY (`ID`),
             KEY `ticket_id` (`ticket_id`))

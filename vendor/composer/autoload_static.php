@@ -60,6 +60,8 @@ class ComposerStaticInit94aa7615729eb330edfcf666b082a9d0
         'CSF_Walker_Nav_Menu_Edit' => __DIR__ . '/../..' . '/inc/admin/codestar/functions/walker.php',
         'CSF_Welcome' => __DIR__ . '/../..' . '/inc/admin/codestar/views/welcome.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'TT_Admin_Ajax' => __DIR__ . '/../..' . '/inc/admin/tt-ajax.php',
+        'TT_Admin_Department_Manager' => __DIR__ . '/../..' . '/inc/admin/tt-admin-department-manager.php',
         'TT_Assets' => __DIR__ . '/../..' . '/inc/public/tt-assets.php',
         'TT_Menu' => __DIR__ . '/../..' . '/inc/admin/tt-menu.php',
         'TT_db' => __DIR__ . '/../..' . '/inc/public/tt-db.php',

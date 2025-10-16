@@ -59,6 +59,8 @@ return array(
     'CSF_Walker_Nav_Menu_Edit' => $baseDir . '/inc/admin/codestar/functions/walker.php',
     'CSF_Welcome' => $baseDir . '/inc/admin/codestar/views/welcome.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'TT_Admin_Ajax' => $baseDir . '/inc/admin/tt-ajax.php',
+    'TT_Admin_Department_Manager' => $baseDir . '/inc/admin/tt-admin-department-manager.php',
     'TT_Assets' => $baseDir . '/inc/public/tt-assets.php',
     'TT_Menu' => $baseDir . '/inc/admin/tt-menu.php',
     'TT_db' => $baseDir . '/inc/public/tt-db.php',

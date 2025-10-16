@@ -12,8 +12,11 @@ if( class_exists( 'CSF' ) ) {
   //
   // Create options
   CSF::createOptions( $prefix, array(
+
+    // Header Options
     'framework_title' => 'تیکت پشتیبانی تیـــک تـــوک',
 
+    // Menu Options
     'menu_title' => 'تنظیمات تیک توک',
     'menu_slug'  => 'tiktook-settings',
     'menu_hidden' => true,
@@ -22,6 +25,7 @@ if( class_exists( 'CSF' ) ) {
     'show_footer' => false,
     'ajax_save' => true,
     'sticky_header' => true,
+    
   ) );
 
   //

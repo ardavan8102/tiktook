@@ -17,6 +17,8 @@
 
                     <form method="post" id="tiktook-add-department">
 
+                    <?php wp_nonce_field( 'add_department', 'add_department_nonce', false); ?>
+
                         <div class="form-field">
                             <label for="department-name">عنوان</label>
                             <input type="text" name="name" id="department-name">
@@ -26,7 +28,13 @@
                             <label for="department-parent">والد</label>
                             <select name="parent" id="department-parent">
                                 <option value="0">بدون والد</option>
-                                <option value="1">عنوان والد</option>
+                                
+                                <?php if(count($departments)): ?>
+                                    <?php foreach($departments as $department): ?>
+                                        <option value="<?php echo esc_attr($department->ID); ?>"><?php echo esc_html($department->name); ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                                
                             </select>
                         </div>
                         
@@ -74,19 +82,46 @@
 
                     <tbody id="the-list">
 
-                        <tr>
-                            <td>
-                                <strong>عنوان</strong>
-                                <br>
-                                <div class="row-actions">
-                                    <span class="edit"><a href="">ویرایش</a> | </span>
-                                    <span class="delete"><a href="">حذف</a></span>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td>l</td>
-                        </tr>
+                        <?php if(count($departments)): ?>
+
+                            <?php foreach($departments as $department): ?>
+                                <tr>
+                                    <td>
+                                        <strong><?php echo esc_html($department->name) ?></strong>
+                                        <br>
+                                        <div class="row-actions">
+                                            <span class="edit"><a href="">ویرایش</a> | </span>
+                                            <span class="delete"><a href="">حذف</a></span>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <?php 
+                                        
+                                            if($department->parent){
+                                                $parent = $this->get_single_department_info($department->parent);
+
+                                                echo $parent ? $parent->name : 'ندارد';
+                                            } else {
+                                                echo "ندارد";
+                                            }
+                                            
+                                        ?>
+                                    </td>
+
+                                    <td>
+
+                                    </td>
+
+                                    <td>
+                                        <?php 
+                                            echo esc_html($department->position);
+                                        ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
+                        <?php endif; ?>
 
                     </tbody>
 
